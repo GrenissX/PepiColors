@@ -13,18 +13,11 @@ function closeMenu() {
     <div class="nav-inner">
       <a class="brand" href="#top">
         <span class="brand-badge">
-          <svg viewBox="0 0 60 60" class="brand-star" aria-hidden="true">
-            <circle cx="30" cy="30" r="30" fill="var(--pink-soft)" />
-            <path
-              d="M30 12 L34.5 24.5 L48 25.5 L37.5 33.8 L41 47 L30 39.5 L19 47 L22.5 33.8 L12 25.5 L25.5 24.5 Z"
-              fill="var(--yellow-bowl)"
-              stroke="var(--plum)"
-              stroke-width="1.5"
-              stroke-linejoin="round"
-            />
-          </svg>
+        <img src="/logo.png" alt="Logo" class="brand-logo">
+          </span>
+        <span class="brand-name">
+        Pepi Colors
         </span>
-        <span class="brand-name">Pepi Colors</span>
       </a>
 
       <nav class="nav-links" aria-label="Navegación principal">
