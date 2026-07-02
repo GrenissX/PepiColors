@@ -27,6 +27,12 @@ const prizes: Prize[] = [
   { emoji: '🌸', text: '¡Aroma sorpresa! Un perfumito se sumó a tu pedido.' },
 ]
 
+// Helper tipado: TS marca array[i] como "posiblemente undefined" (noUncheckedIndexedAccess).
+// Como los arreglos de arriba nunca están vacíos, es seguro afirmar que sí hay un elemento.
+function randomItem<T>(arr: T[]): T {
+  return arr[Math.floor(Math.random() * arr.length)] as T
+}
+
 let uid = 0
 function makeBead(): Bead {
   return {
@@ -34,7 +40,7 @@ function makeBead(): Bead {
     x: 6 + Math.random() * 88,
     y: 30 + Math.random() * 62,
     size: 8 + Math.random() * 10,
-    color: colors[Math.floor(Math.random() * colors.length)],
+    color: randomItem(colors),
     tx: `${(Math.random() * 80 - 40).toFixed(0)}px`,
     popped: false,
   }
@@ -44,7 +50,7 @@ const beads = reactive<Bead[]>(Array.from({ length: 46 }, makeBead))
 const scooping = ref(false)
 const disabled = ref(false)
 const showResult = ref(false)
-const result = ref<Prize>(prizes[0])
+const result = ref<Prize>(randomItem(prizes))
 
 function scoop() {
   if (disabled.value) return
@@ -58,7 +64,7 @@ function scoop() {
   chosen.forEach((b) => (b.popped = true))
 
   setTimeout(() => {
-    result.value = prizes[Math.floor(Math.random() * prizes.length)]
+    result.value = randomItem(prizes)
     showResult.value = true
     scooping.value = false
   }, 550)
