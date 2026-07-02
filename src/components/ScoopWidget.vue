@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { reactive, ref } from 'vue'
+import { prizeItems, type PrizeItem } from '../data/prizes'
 
 interface Bead {
   id: number
@@ -11,21 +12,7 @@ interface Bead {
   popped: boolean
 }
 
-interface Prize {
-  emoji: string
-  text: string
-}
-
 const colors = ['#FF4FA0', '#B18CFF', '#5FE0BE', '#FFC93C', '#FF8FC6', '#8FD9FF']
-
-const prizes: Prize[] = [
-  { emoji: '🖊️', text: '¡Tu cucharada trajo esferos de gel para tu cartuchera!' },
-  { emoji: '💇‍♀️', text: 'Salieron piezas de peines y accesorios para el cabello.' },
-  { emoji: '💄', text: '¡Premio de belleza! Te llevas un kit de maquillaje mini.' },
-  { emoji: '🧴', text: 'Tu cucharada trae skincare: mascarilla y crema facial.' },
-  { emoji: '🎀', text: 'Salieron moños y ganchos para completar tu look.' },
-  { emoji: '🌸', text: '¡Aroma sorpresa! Un perfumito se sumó a tu pedido.' },
-]
 
 // Helper tipado: TS marca array[i] como "posiblemente undefined" (noUncheckedIndexedAccess).
 // Como los arreglos de arriba nunca están vacíos, es seguro afirmar que sí hay un elemento.
@@ -50,7 +37,7 @@ const beads = reactive<Bead[]>(Array.from({ length: 46 }, makeBead))
 const scooping = ref(false)
 const disabled = ref(false)
 const showResult = ref(false)
-const result = ref<Prize>(randomItem(prizes))
+const result = ref<PrizeItem>(randomItem(prizeItems))
 
 function scoop() {
   if (disabled.value) return
@@ -64,7 +51,7 @@ function scoop() {
   chosen.forEach((b) => (b.popped = true))
 
   setTimeout(() => {
-    result.value = randomItem(prizes)
+    result.value = randomItem(prizeItems)
     showResult.value = true
     scooping.value = false
   }, 550)
@@ -110,8 +97,8 @@ function scoop() {
 
     <Transition name="pop-in">
       <div v-if="showResult" class="result-card" role="status" aria-live="polite">
-        <span class="result-emoji">{{ result.emoji }}</span>
-        <p class="result-text">{{ result.text }}</p>
+        <span class="result-emoji">{{ result.icon }}</span>
+        <p class="result-text">{{ result.resultText }}</p>
       </div>
     </Transition>
   </div>
