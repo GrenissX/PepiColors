@@ -4,7 +4,8 @@ import HeroSection from './components/HeroSection.vue'
 import StatsSection from './components/StatsSection.vue'
 import HowItWorks from './components/HowItWorks.vue'
 import PrizesSection from './components/PrizesSection.vue'
-import CtaBand from './components/CtaBand.vue'
+import VideosSection from './components/VideosSection.vue'
+import ShopSection from './components/ShopSection.vue'
 import ContactSection from './components/ContactSection.vue'
 import TheFooter from './components/TheFooter.vue'
 </script>
@@ -15,8 +16,9 @@ import TheFooter from './components/TheFooter.vue'
     <HeroSection />
     <StatsSection />
     <HowItWorks />
+    <VideosSection />
     <PrizesSection />
-    <CtaBand />
+    <ShopSection />
     <ContactSection />
   </main>
   <TheFooter />

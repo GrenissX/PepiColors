@@ -2,7 +2,7 @@
 const steps = [
   {
     title: 'Nos cuentas qué te gusta',
-    text: 'Llenas el formulario con tus datos y tus gustos: colores, estilo, para quién es el pedido.',
+    text: 'Llenas el formulario con tus datos, tu información de contacto y la cantidad de cucharitas.',
   },
   {
     title: 'Armamos tu cucharada',

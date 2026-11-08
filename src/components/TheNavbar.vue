@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import { FORM_URL } from '../composables/useConfig'
 
 const isOpen = ref(false)
 function closeMenu() {
@@ -26,7 +25,7 @@ function closeMenu() {
         <a href="#contacto">Contacto</a>
       </nav>
 
-      <a class="btn btn-primary btn-nav" :href="FORM_URL" target="_blank" rel="noopener">Solicitar ahora</a>
+      <a class="btn btn-primary btn-nav" href="#pedido">Comprar Ahora</a>
 
       <button
         class="nav-toggle"
@@ -43,7 +42,7 @@ function closeMenu() {
         <a href="#como-funciona" @click="closeMenu">Cómo funciona</a>
         <a href="#premios" @click="closeMenu">Premios</a>
         <a href="#contacto" @click="closeMenu">Contacto</a>
-        <a class="btn btn-primary" :href="FORM_URL" target="_blank" rel="noopener" @click="closeMenu">Solicitar ahora</a>
+        <a class="btn btn-primary" href="#pedido" @click="closeMenu">Solicitar ahora</a>
       </div>
     </Transition>
   </header>

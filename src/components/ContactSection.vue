@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { FORM_URL, CONTACT } from '../composables/useConfig'
+import { CONTACT } from '../composables/useConfig'
 </script>
 
 <template>
@@ -17,7 +17,7 @@ import { FORM_URL, CONTACT } from '../composables/useConfig'
           </li>
           <li>
             <span class="contact-icon">📍</span>
-            <div><span class="contact-label">Envíos</span><span class="contact-value">A todo el país</span></div>
+            <div><span class="contact-label">Envíos</span><span class="contact-value">A todo Colombia</span></div>
           </li>
         </ul>
 
@@ -35,8 +35,8 @@ import { FORM_URL, CONTACT } from '../composables/useConfig'
 
       <div class="contact-card">
         <h3>¿Lista para pedir la tuya?</h3>
-        <p>Al dar clic vas a nuestro formulario para dejar tus datos y contarnos qué te gustaría recibir.</p>
-        <a class="btn btn-primary btn-lg" :href="FORM_URL" target="_blank" rel="noopener">Solicitar ahora</a>
+        <p>Elige tus cucharadas, deja tus datos y tu pedido nos llega directo por WhatsApp.</p>
+        <a class="btn btn-primary btn-lg" href="#pedido">Solicitar ahora</a>
         <p class="contact-card-note">Respondemos por WhatsApp en cuanto recibimos tu formulario 💌</p>
       </div>
     </div>
