@@ -91,7 +91,7 @@ function submit() {
         <p class="ship">🚚 El valor del envío dependerá de tu zona de residencia.</p>
       </aside>
 
-      <form class="panel form" novalidate @submit.prevent="submit">
+      <form id="datos" class="panel form" novalidate @submit.prevent="submit">
         <h3>Tus datos de envío</h3>
 
         <label class="full" :class="{ err: bad('nombres') }">
@@ -137,7 +137,7 @@ function submit() {
     </div>
 
     <Transition name="pop">
-      <a v-if="count" class="fab" href="#pedido" aria-label="Ir a mi carrito">🛒 {{ count }} · {{ money(total) }}</a>
+      <a v-if="count" class="fab" href="#datos" aria-label="Ir a llenar mis datos y comprar">🛒 {{ count }} · {{ money(total) }}</a>
     </Transition>
   </section>
 </template>
@@ -197,7 +197,7 @@ function submit() {
 
 .ship { margin: 1.2rem 0 0; padding: 0.8rem 1rem; border-radius: var(--radius-sm); background: color-mix(in srgb, var(--lavender) 18%, white); color: var(--plum); font-weight: 600; font-size: 0.9rem; }
 
-.form { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.form { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; scroll-margin-top: 5.5rem; }
 .form h3, .full, .send, .form .ship, .msg-err, .msg-ok { grid-column: 1 / -1; }
 .form label { display: flex; flex-direction: column; gap: 0.35rem; }
 .form label span { font-family: var(--font-display); font-weight: 600; font-size: 0.9rem; color: var(--plum); }
