@@ -24,10 +24,13 @@ export const PACKS: Pack[] = [
 export const money = (n: number) =>
   new Intl.NumberFormat('es-CO', { style: 'currency', currency: 'COP', maximumFractionDigits: 0 }).format(n)
 
-// 🎬 Últimas publicaciones de Instagram que se muestran en la página.
-// Para actualizarlas, cambia estos enlaces (las publicaciones deben ser públicas).
-export const LATEST_POSTS = [
-  'https://www.instagram.com/p/DeruEXOv0Do/',
-  'https://www.instagram.com/p/DYj-UtXvcmj/',
-  'https://www.instagram.com/p/DUtJMzJADO7/',
+// 🎬 Videos de TikTok que se muestran en la página (los más vistos).
+// "views" es el texto de vistas que se ve en la etiqueta, por ejemplo '125K' o '1.2M'.
+// Si lo dejas vacío, la etiqueta de vistas no aparece. TikTok no permite leerlo automáticamente.
+export interface VideoItem { url: string; views?: string }
+
+export const LATEST_VIDEOS: VideoItem[] = [
+  { url: 'https://www.tiktok.com/@pepicolors/video/7641594214899354888', views: '' },
+  { url: 'https://www.tiktok.com/@pepicolors/video/7621354608077704455', views: '' },
+  { url: 'https://www.tiktok.com/@pepicolors/video/7608007664311831815', views: '' },
 ]
